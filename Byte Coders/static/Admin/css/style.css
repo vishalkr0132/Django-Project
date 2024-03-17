@@ -1,0 +1,224 @@
+@font-face {
+	font-family: 'Arimo-Bold';
+	src: url('../fonts/Arimo-Bold/Arimo-Bold.eot');
+	src: url('../fonts/Arimo-Bold/Arimo-Bold.woff') format('woff'), url('../fonts/Arimo-Bold/Arimo-Bold.ttf') format('truetype'), url('../fonts/Arimo-Bold/Arimo-Bold.svg') format('svg');
+}
+@font-face {
+	font-family: 'ChangaOne';
+	src: url('../fonts/ChangaOne/ChangaOne-Regular.eot');
+	src: url('../fonts/ChangaOne/ChangaOne-Regular.woff') format('woff'), url('../fonts/ChangaOne/ChangaOne-Regular.ttf') format('truetype'), url('../fonts/ChangaOne/ChangaOne-Regular.svg') format('svg');
+}
+@font-face {
+	font-family: 'Comfortaa-Regular';
+	src: url('../fonts/Comfortaa/Comfortaa-Regular.eot');
+	src: url('../fonts/Comfortaa/Comfortaa-Regular.woff') format('woff'), url('../fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype'), url('../fonts/Comfortaa/Comfortaa-Regular.svg') format('svg');
+}
+body {
+	background: #ededed url(../images/bg-header.gif) repeat-x top center;
+	line-height: 1;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.top-botto{
+	margin-top: 50px;
+	color: white !important;
+}
+
+.top-botto a{
+	transition: 0.5s;
+	font-size: 20px;
+	color: white !important;
+	background-color: #000;
+	border-radius: 8px;
+	padding: 0px 10px;
+}
+
+.top-botto a:hover{
+	color: goldenrod;
+}
+
+.logo{
+	background: transparent !important;
+	font-size: 34px !important;
+	font-weight: 800;
+}
+
+
+.big-pic{
+	margin-top: 150px;
+}
+
+#header {
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
+}
+#header .section {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#header .section .logo {
+	float: left;
+	margin: 0;
+	padding: 60px 0 0 10px;
+	width: 324px;
+}
+#header .section .logo a {
+	background: url(../images/bg-logo.png) repeat-x top left;
+	color: #fff;
+	display: block;
+	font-family: 'Arimo-Bold';
+	font-size: 60px;
+	font-weight: normal;
+	height: 130px;
+	line-height: 130px;
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 270px;
+}
+#header .section ul {
+	display: inline-block;
+	float: right;
+	margin: 0;
+	overflow: hidden;
+	padding: 114px 0 0;
+}
+#header .section ul li {
+	background: url(../images/bg-nav-right.gif) no-repeat top right;
+	display: inline-block;
+	float: left;
+	list-style: none;
+	margin: 0 10px;
+	padding: 0;
+}
+#header .section ul li a {
+	background: url(../images/bg-nav-left.gif) no-repeat top left;
+	color: #fff;
+	display: inline-block;
+	font-size: 16px;
+	height: 30px;
+	letter-spacing: 0.05em;
+	line-height: 30px;
+	margin: 0;
+	padding: 0 15px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#header .section ul li a:hover {
+	color: #ccc;
+}
+#header .section ul li.selected {
+	background: url(../images/bg-nav-right-selected.gif) no-repeat top right;
+}
+#header .section ul li.selected a {
+	background: url(../images/bg-nav-left-selected.gif) no-repeat top left;
+}
+#header .article {
+	background: #fff;
+	border: 2px solid #5fb3bd;
+	border-radius: 4px;
+	margin: 50px auto 28px;
+	overflow: hidden;
+	padding: 0;
+	width: 936px;
+}
+#header .article img {
+	display: block;
+	float: left;
+	margin: 0 50px 0 0;
+	padding: 0;
+}
+#header .article h1 {
+	color: #1b2130;
+	font-family: 'ChangaOne';
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0;
+	line-height: 50px;
+	padding: 110px 30px 30px;
+}
+
+#footer {
+	background: #4c8f96;
+	border-top: 1px solid #9bd9e0;
+	margin: 0;
+	padding: 0;
+}
+#footer > div {
+	margin: 0 auto;
+	padding: 30px 0 28px;
+	overflow: hidden;
+	text-align: center;
+	width: 960px;
+}
+#footer div p {
+	color: #ededed;
+	display: inline-block;
+	float: right;
+	font-size: 12px;
+	letter-spacing: 0.05em;
+	margin: 0;
+	padding: 27px 0 0;
+	text-align: center;
+}
+#footer div .connect {
+	background: #387a82;
+	float: right;
+	height: 18px;
+	margin: 0 20px 0 150px;
+	padding: 22px 20px;
+	overflow: hidden;
+	width: 144px;
+}
+#footer div .connect span {
+	color: #ededed;
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	height: 19px;
+	line-height: 21px;
+	margin: 0;
+	padding: 0 0 0 39px;
+}
+#footer div .connect a {
+	background: url(../images/icons.png) no-repeat;
+	display: block;
+	float: left;
+	height: 20px;
+	margin: 0 8px;
+	padding: 0;
+	text-indent: -99999px;
+	width: 20px;
+}
+#footer div .connect #twitter {
+	background-position: 0 -32px;
+}
+#footer div .connect #twitter:hover {
+	background-position: -25px -32px;
+}
+#footer div .connect #facebook {
+	background-position: 0 -57px;
+}
+#footer div .connect #facebook:hover {
+	background-position: -25px -57px;
+}
+#footer div .connect #googleplus {
+	background-position: 0 -82px;
+}
+#footer div .connect #googleplus:hover {
+	background-position: -25px -82px;
+}
+#footer div .connect #pinterest {
+	background-position: 0 -107px;
+}
+#footer div .connect #pinterest:hover {
+	background-position: -25px -107px;
+}
