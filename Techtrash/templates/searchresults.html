@@ -1,0 +1,461 @@
+
+<?php include('navbar.php')?>
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <!-- Layout Demo -->
+              <div class="layout-demo-wrapper">
+                <div class="layout-demo-placeholder">
+ 
+<style>
+
+
+
+body{
+  background: #2e2f41;
+  padding:10px;
+}
+
+.doctor-card{
+  max-width:700px;
+  background: #fff;
+  border-radius: 2px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  position:relative;
+  
+  .info{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 90px auto;
+    
+    .avatar{
+      overflow: hidden;
+      height:72px;
+      width:72px;
+      border-radius:3px;
+      margin-top:5px;
+      
+      img{
+        width:100%;
+        border-radius:3px;
+        overflow:hidden;
+      }
+    }
+    
+    .details{
+      align-self:center;
+      padding:10px 0;
+      
+      .name{
+        font-size:18px;
+        line-height:1;
+        padding:2px 0;
+        font-weight:400
+      }
+      
+      .meta-info{
+        padding:2px 0;
+        color: #787878;
+        line-height: 16px;
+        font-weight:400;
+        
+        .prac-area,
+        .exp-yr{
+          
+          &:not(:empty){
+            &::before{
+              content: "|";
+              padding: 10px
+            }
+          }
+          
+        }
+      }
+    }
+    
+    @media(max-width:575px){
+      grid-template-columns: 1fr;
+      justify-items:center;
+      
+      .details{
+        text-align:center;
+        
+        .meta-info{
+          padding:5px;
+          
+          .exp-yr{
+            display:block;
+            
+            &:not(:empty){
+              margin-top:5px;
+              &::before{
+                content: none
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+  
+  .actions{
+    margin: 0 15px 15px;
+    display: table;
+    width:calc(100% - 30px); 
+    border-collapse: collapse;
+    border-radius: 3px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #f6f7f8;
+    
+    > div{
+      text-align:center;
+      padding:0;
+      display:table-cell;
+      border:1px solid #f2f2f2;
+      vertical-align:middle;
+      height: 64px;
+    }
+    
+    .ratings{
+      width:24%;
+      .rating-control{
+        display:block;
+        
+        .fa{
+          font-size:18px;
+          color:#ffdc40
+        }
+      }
+      .rating-count{
+        font-size: 12px;
+        text-transform:uppercase;
+        color:#898989;
+      }
+    }
+    .comments{
+      width:23%;
+      .comment-count{
+        strong{
+          display:block;
+          color: $blue-color;
+          font-size:18px;
+          font-weight:400;
+          line-height: 20px;
+        }
+        
+        font-size: 12px;
+        text-transform:uppercase;
+        color:#898989
+      }
+    }
+    .consultation{
+      width:23%;
+      
+      .fee{
+        
+        strong{
+          display:block;
+          color: $blue-color;
+          font-size:18px;
+          font-weight:400;
+          line-height: 20px;
+        }
+        
+        font-size: 12px;
+        text-transform:uppercase;
+        color:#898989;
+      }
+    }
+    .appo{
+      width:30%;
+      
+      .btn{
+        background:rgb(54 127 169 / 89%) ;
+        display:block;
+        text-decoration:none;
+        color: #fff;
+        text-transform: uppercase;
+        padding:15px;
+        margin:0 5px;
+      }
+    }
+    
+    @media(max-width:575px){
+      > div{
+        display:block;
+        padding:10px;
+        height:auto;
+        
+        &.comments,
+        &.consultation{
+          width:50%;
+          display:inline-block;
+        }
+        
+        &.ratings,
+        &.appo{
+          width:100%
+        }
+      }
+    }
+  }
+  
+  .locations{
+    padding: 15px 15px 20px;
+    // background: #fafafa;
+    border-top:1px solid #f6f7f8;
+    border-radius: 0 0 2px 2px;
+    line-height:1;
+    font-size:12px;
+    color: #898989;
+    font-weight:400;
+    text-transform:capitalize;
+    
+    @media(max-width:575px){
+      text-align:center
+    }
+  }
+  
+  &.hoverable{
+     &:hover{
+         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    } 
+  }
+  
+  &.certified::after{
+    content: '';
+    background: url('//via.placeholder.com/100') no-repeat;
+    background-size:contain;
+    height:30px;
+    width:30px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border-radius:50%
+  }
+  
+  @media(max-width:575px){
+    padding:10px
+  }
+  
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+</style>
+
+   
+
+   <?php
+  
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "E-waste";
+
+// Create a database connection
+$conn = new mysqli($host, $username, $password, $database);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+// <?php
+// Assuming you have a table named "E_waste" in your database
+// $sql = "SELECT * FROM e_waste";
+// $result = $conn->query($sql);
+
+
+// Assuming a database connection is established elsewhere in your code
+
+
+// Assuming you have a database connection object named $conn
+$sql = "SELECT * FROM location";
+$result = mysqli_query($conn, $sql);
+
+// Process the result set as needed
+
+
+// Process the result as needed
+
+
+
+
+
+// Retrieve user input from the form
+$state = $_POST['state'];
+$city = $_POST['city'];
+$pincode = $_POST['pincode'];
+
+// Perform a database query to fetch data based on user input
+$sql = "SELECT * FROM e_waste WHERE state = '$state' AND city = '$city' AND pincode = '$pincode'";
+// $result = $conn->query($sql);
+// $result = mysqli_query($conn ,$sql);
+$result = mysqli_query($conn, 'SELECT * FROM location');
+
+if ($result->num_rows > 0) {
+  while ($row = mysqli_fetch_assoc($result))
+    // while ($row = $result->fetch_assoc())
+   {
+        ?>
+        <div class="doctor-card">
+            <div class="info">
+                <div class="avatar">
+                    <img src="//via.placeholder.com/200" alt="<?php echo $row['name']; ?>">
+                </div>
+                <div class="details">
+                    <div class="name"><?php echo $row['name']; ?></div>
+                    <div class="meta-info">
+                        <span class="sp"><?php echo $row['street']; ?></span>
+                        <span class="prac-area"><?php echo $row['city']; ?></span>
+                        <span class="exp-yr"><?php echo $row['state']; ?></span>
+                        <span class="exp-yr"><?php echo $row['pincode']; ?></span>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ratings">
+                    <span class="rating-control">
+                        <!-- Add your rating display logic here -->
+                    </span>
+                    <span class="rating-count"><?php echo $row['rating_count']; ?> Ratings</span>
+                </div>
+                <div class="comments">
+                    <span class="comment-count"><strong>Capacity</strong> <?php echo $row['capacity']; ?></span>
+                </div>
+                <div class="consultation">
+                    <span class="fee"><strong>Since</strong> <?php echo $row['since_year']; ?></span>
+                </div>
+                <div class="appo">
+                    <a href="https://api.whatsapp.com/send?phone=<?php echo $row['whatsapp_number']; ?>&text=hello , I want to Deposit My E-waste" class="btn">Contact Now</a>
+                </div>
+            </div>
+            <!-- <div class="locations">
+                <?php echo $row['location_info']; ?>
+            </div> -->
+        </div>
+        <?php
+    }
+} else {
+    echo "No data found.";
+}
+
+?>
+
+ 
+
+
+
+                </div>
+                <!-- <div class="layout-demo-info">
+                  <h4>Layout container</h4>
+                  <p>Container layout sets a <code>max-width</code> at each responsive breakpoint.</p>
+                </div> -->
+              </div>
+              <!--/ Layout Demo -->
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <!-- <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div> -->
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- <div class="buy-now">
+      <a
+        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
+        target="_blank"
+        class="btn btn-danger btn-buy-now"
+        >Upgrade to Pro</a
+      >
+    </div> -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

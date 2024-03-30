@@ -1,0 +1,340 @@
+<?php include ('navbar.php')?>
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <!-- Layout Demo -->
+              <div class="layout-demo-wrapper">
+                <div class="layout-demo-placeholder">
+                  <!-- <img
+                    src="../assets/img/layouts/layout-container-light.png"
+                    class="img-fluid"
+                    alt="Layout container"
+                    data-app-light-img="layouts/layout-container-light.png"
+                    data-app-dark-img="layouts/layout-container-dark.png"
+                  /> -->
+
+                  <style>
+
+
+body{
+  background: #2e2f41;
+  padding:10px;
+}
+
+.doctor-card{
+  max-width:700px;
+  background: #fff;
+  border-radius: 2px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  position:relative;
+  
+  .info{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 90px auto;
+    
+    .avatar{
+      overflow: hidden;
+      height:72px;
+      width:72px;
+      border-radius:3px;
+      margin-top:5px;
+      
+      img{
+        width:100%;
+        border-radius:3px;
+        overflow:hidden;
+      }
+    }
+    
+    .details{
+      align-self:center;
+      padding:10px 0;
+      
+      .name{
+        font-size:18px;
+        line-height:1;
+        padding:2px 0;
+        font-weight:400
+      }
+      
+      .meta-info{
+        padding:2px 0;
+        color: #787878;
+        line-height: 16px;
+        font-weight:400;
+        
+        .prac-area,
+        .exp-yr{
+          
+          &:not(:empty){
+            &::before{
+              content: "|";
+              padding: 10px
+            }
+          }
+          
+        }
+      }
+    }
+    
+    @media(max-width:575px){
+      grid-template-columns: 1fr;
+      justify-items:center;
+      
+      .details{
+        text-align:center;
+        
+        .meta-info{
+          padding:5px;
+          
+          .exp-yr{
+            display:block;
+            
+            &:not(:empty){
+              margin-top:5px;
+              &::before{
+                content: none
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+  
+  .actions{
+    margin: 0 15px 15px;
+    display: table;
+    width:calc(100% - 30px); 
+    border-collapse: collapse;
+    border-radius: 3px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #f6f7f8;
+    
+    > div{
+      text-align:center;
+      padding:0;
+      display:table-cell;
+      border:1px solid #f2f2f2;
+      vertical-align:middle;
+      height: 64px;
+    }
+    
+    .ratings{
+      width:24%;
+      .rating-control{
+        display:block;
+        
+        .fa{
+          font-size:18px;
+          color:#ffdc40
+        }
+      }
+      .rating-count{
+        font-size: 12px;
+        text-transform:uppercase;
+        color:#898989;
+      }
+    }
+    .comments{
+      width:23%;
+      .comment-count{
+        strong{
+          display:block;
+          color: $blue-color;
+          font-size:18px;
+          font-weight:400;
+          line-height: 20px;
+        }
+        
+        font-size: 12px;
+        text-transform:uppercase;
+        color:#898989
+      }
+    }
+    .consultation{
+      width:23%;
+      
+      .fee{
+        
+        strong{
+          display:block;
+          color: $blue-color;
+          font-size:18px;
+          font-weight:400;
+          line-height: 20px;
+        }
+        
+        font-size: 12px;
+        text-transform:uppercase;
+        color:#898989;
+      }
+    }
+    .appo{
+      width:30%;
+      
+      .btn{
+        background:rgb(54 127 169 / 89%) ;
+        display:block;
+        text-decoration:none;
+        color: #fff;
+        text-transform: uppercase;
+        padding:15px;
+        margin:0 5px;
+      }
+    }
+    
+    @media(max-width:575px){
+      > div{
+        display:block;
+        padding:10px;
+        height:auto;
+        
+        &.comments,
+        &.consultation{
+          width:50%;
+          display:inline-block;
+        }
+        
+        &.ratings,
+        &.appo{
+          width:100%
+        }
+      }
+    }
+  }
+  
+  .locations{
+    padding: 15px 15px 20px;
+    // background: #fafafa;
+    border-top:1px solid #f6f7f8;
+    border-radius: 0 0 2px 2px;
+    line-height:1;
+    font-size:12px;
+    color: #898989;
+    font-weight:400;
+    text-transform:capitalize;
+    
+    @media(max-width:575px){
+      text-align:center
+    }
+  }
+  
+  &.hoverable{
+     &:hover{
+         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    } 
+  }
+  
+  &.certified::after{
+    content: '';
+    background: url('//via.placeholder.com/100') no-repeat;
+    background-size:contain;
+    height:30px;
+    width:30px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border-radius:50%
+  }
+  
+  @media(max-width:575px){
+    padding:10px
+  }
+  
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<div class="doctor-card">
+		<div class="info">
+			<div class="avatar">
+				<img src="//via.placeholder.com/200" alt="doc name">
+			</div>
+      <div class="details">
+          <div class="name">Some Popular Name</div>
+          <div class="meta-info">
+            <span class="sp">Actor-Director</span>
+            <span class="prac-area"> Lorem ipsum dolor sit amet.</span>
+            <span class="exp-yr">10 years exp.</span>
+          </div>
+      </div>
+		</div>
+		<div class="actions">
+			<div class="ratings">
+				<span class="rating-control">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<i class="fa fa-star-o"></i>
+					<i class="fa fa-star-o"></i>
+				</span>
+				<span class="rating-count">000 Ratings</span>
+			</div>
+			<div class="comments">
+				<span class="comment-count"><strong>340</strong> Comments</span>
+			</div>
+			<div class="consultation">
+				<span class="fee"><strong>34K</strong>Followers</span>
+			</div>
+			<div class="appo">
+				<a href="#" class="btn">Conform</a>
+			</div>
+
+      <div class="appo">
+				<a href="#" class="btn">Regret</a>
+			</div>
+		</div>
+		<div class="locations">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <!-- <div class="layout-demo-info">
+                  <h4>Layout container</h4>
+                  <p>Container layout sets a <code>max-width</code> at each responsive breakpoint.</p>
+                </div> -->
+              </div>
+              <!--/ Layout Demo -->
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <? include ('footer.php')?>
