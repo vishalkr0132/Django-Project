@@ -32,7 +32,6 @@ def Login_User(request):
         if not user.is_staff and user:
             login(request, user)
             messages.success(request, "Logged in Successfully")
-            # return redirect('home')
             return redirect('profile')
         else:
             messages.success(request, "Invalid user")
